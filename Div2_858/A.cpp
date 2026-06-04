@@ -52,3 +52,5 @@ int main() {
  
 // 일단 y를 맞추고
 // 그다음 x 빼야됨
+
+// https://codeforces.com/contest/1806/problem/A

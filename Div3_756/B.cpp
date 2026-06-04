@@ -30,3 +30,6 @@ int main() {
 // 2. 만들 수 있는 총 팀의 개수는 (a+b)/4를 넘을 수 없다
 
 // ans = min(min(a,b),(a+b)/4)
+
+
+// https://codeforces.com/contest/1611/problem/B

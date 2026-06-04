@@ -75,3 +75,5 @@ int main() {
 // 모든 사람이 적었다면 0점
 
 // ouput = 각 플레이어가 최종적으로 획득한 점수
+
+// https://codeforces.com/contest/1722/problem/C

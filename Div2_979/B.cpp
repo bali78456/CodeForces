@@ -45,3 +45,5 @@ int main() {
 // 0100
 // 0,0, 0, 00 ,00 ,000
 // 1, 01, 10, 100, 0100
+
+// https://codeforces.com/contest/2030/problem/B

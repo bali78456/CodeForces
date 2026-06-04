@@ -36,3 +36,5 @@ int main() {
 
 // ouput = 이 pair 의 수를 maximize 해야됨
 // 그냥 홀 홀 붙이고 마지막에 짝수 밀어넣으면 됨
+
+// https://codeforces.com/contest/1509/problem/A

@@ -50,3 +50,5 @@ int main() {
 // right-left+1;
 
 // 만약 전부 다 w이라면 결국 left == right == -1 일텐데
+
+// https://codeforces.com/contest/1927/problem/A

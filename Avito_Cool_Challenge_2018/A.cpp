@@ -27,3 +27,5 @@ int main() {
 // n-1이 n의 약수가 되는 경우
 // 2
 // n == 2 라면 답은 무조건 2가 돼야한다
+
+// https://codeforces.com/contest/1081/problem/A
