@@ -5,3 +5,8 @@ C
 D
 E
 F
+
+tempCodeRunnerFile.cpp
+*.exe
+*.out
+.DS_Store
