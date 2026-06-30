@@ -2,16 +2,6 @@
 using namespace std;
 typedef long long ll;
 
-ll gcd(ll a,ll b)
-{
-    if(b == 0) return a;
-    return gcd(b, a % b);
-}
-ll lcm(ll a,ll b)
-{
-    return (a * b) / gcd(a, b);
-}
-
 void solve() {
     int t;
     cin >> t;
@@ -19,16 +9,14 @@ void solve() {
     {
         int n;
         cin >> n;
-        vector<ll> v;
-        for(int i = 1; i <= n;i++)
-            v.push_back(i);
-        
+        ll ans = 0;
+        for(int b = 1; b <= n; b++) {
+            ll cnt = n / b;
+            ans += cnt*cnt;
+        }
+        cout << ans << "\n";
     }
 }
-// a=b=c 라면 무조건 가능함
-// 그리고 n-1 일 때의 경우의 수는 모두 다 가능(n일때도 n-1일때의 조합을 만들수있으니까)
-// a=b, c=a+2일때도 가능
-
 
 int main() {
     ios::sync_with_stdio(false);
@@ -38,56 +26,24 @@ int main() {
 
     return 0;
 }
-
-// 1 1 1 *
-// 2 2 2 *
-// 3 3 3 *
-
-// 1 1 2 *
-// 1 1 3 *
-
-// 1 2 1 x
-// 1 3 1 x
-
-// 2 1 1 *
-// 3 1 1 *
-
-// 1 2 2 x
-// 1 3 3 x
-
-// 2 2 1 x
-// 3 3 1 x
-
-// 2 1 2 *
-// 3 1 3 *
-
-// 1 2 3 x
-// 1 3 2 x
-// 3 1 2 *
-// 3 2 1 x
-
-
-// n = 2
-// 1 1 1  *
-// 2 2 2  *
-
-// 1 1 2  *
-// 1 2 1
-// 2 1 1  *
-
-// 1 2 2
-// 2 2 1
-// 2 1 2  *
-
-
 // 1부터 n까지 번호가 있음
 // gcd(lcm(a,b),lcm(b,c))=gcd(a,c)를 만족하는 경우의 수 출력
 // n=1 => 1
 // n=2 => 2
-// n=3 => 10
-
 // n=20 => 612
 
+// 1. 조건을 만족하는 a,b,c는 오직
+// a와 c가 모두 b의 배수일 때 (b가 a와 c의 공약수일 때) 뿐이다
+// 2. a가 b의 배수이므로 lcm(a,b)=a
+//    c가 b의 배수이므로 lcm(b,c)=c
 
+// 조건
+// a와 c는 b의 배수여야 한다
 
-// 못품
+// 1. b를 기준으로 잡고 루프를 돈다
+// 2. 1부터 n까지의 자연수 중 b의 배수는 총 n/b개 존재
+// 3. a와 c는 서로 독립적으로 b의 배수 중에서 아무거나 고르면 된다
+// 4. 따라서 b에 대해 가능한 (a,c) 쌍의 개수는 n/b * n/b => (n/b)^2
+// 5. 모든 가능한 b에 대해 이 값들을 더해주면 됨
+
+// https://codeforces.com/contest/2238/problem/B
