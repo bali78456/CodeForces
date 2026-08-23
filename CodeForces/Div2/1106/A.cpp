@@ -66,4 +66,4 @@ int main() {
 // 2. 기존 주어진 배열에서 걸리는 시간 세고
 // 3. a,b 둘 다 정렬한 뒤 걸리는 시간 중 더 작은거 출력
 
-// // https://codeforces.com/contest/2238/problem/A
+// https://codeforces.com/contest/2238/problem/A
