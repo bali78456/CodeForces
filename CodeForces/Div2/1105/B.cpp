@@ -47,7 +47,6 @@ int main() {
 // output = clean 매트릭스 갯수 출력
 
 // 1. 모든 r*c 부분행렬의 xor합이 0이어야한다
-// 2. 
 
 // r=1,c=2
 // ai,j xor ai,j+1=0
@@ -60,5 +59,3 @@ int main() {
 // r=c=2 , n=r or m=c
 
 // https://codeforces.com/contest/2240/problem/B
-
-// 코드는 맞는데 이해를 못함

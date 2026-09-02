@@ -2,63 +2,57 @@
 using namespace std;
 typedef long long ll;
 
+vector<string> Map;
 int dx[4] = {1, 0, -1, 0};
 int dy[4] = {0, 1, 0, -1};
-vector<vector<bool>> visited;
-vector<vector<char>> Map;
 vector<vector<int>> dist;
-int h, w;
+int h,w;
 
 void bfs(int start,int end)
 {
-    queue<pair<int,int>>q;
+    queue<pair<int, int>> q;
     q.push({start, end});
-    visited[start][end]=true;
-
+    dist[start][end] = 0;
+    
     while(!q.empty())
     {
-        start=q.front().first;
+        start = q.front().first;
         end = q.front().second;
         q.pop();
 
         for(int i = 0; i < 4;i++)
         {
-            int nx = dx[i] + start;
-            int ny = dy[i] + end;
+            int nx = start + dx[i];
+            int ny = end + dy[i];
 
             if(nx>=0&&ny>=0&&nx<h&&ny<w)
             {
-                if(!visited[nx][ny]&&Map[nx][ny]=='.')
+                if(Map[nx][ny]=='.'&&dist[nx][ny]==-1)
                 {
-                    visited[nx][ny]=true;
+                    dist[nx][ny] = dist[start][end] + 1;
                     q.push({nx, ny});
-                    dist[nx][ny] = dist[start][end]+1;
                 }
             }
         }
     }
 }
 
-void solve() {
+void solve()
+{
     cin >> h >> w;
+    Map.resize(h);
 
-    Map.assign(h, vector<char>(w, 0)); 
     for(int i = 0; i < h; i++) {
-        for(int j = 0; j < w;j++)
-        {
-            cin >> Map[i][j];
-        }
+        cin >> Map[i];
     }
 
-    auto ans=0;
+    int ans = 0;
     for(int i = 0; i < h; i++) {
         for(int j = 0; j < w;j++)
         {
             if(Map[i][j]=='.')
             {
-                visited.assign(h, vector<bool>(w, false));
-                dist.assign(h, vector<int>(w, 0));
-
+                dist.assign(h, vector<int>(w, -1));
                 bfs(i, j);
 
                 for(int k = 0; k < h;k++)
@@ -71,7 +65,6 @@ void solve() {
             }
         }
     }
-
     cout << ans;
 }
 
