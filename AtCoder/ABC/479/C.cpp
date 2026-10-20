@@ -41,7 +41,4 @@ int main() {
     return 0;
 }
 
-// dp state
-// dp[21][2] => 0 이면 고른다 1이면 안고른다
-
 // https://atcoder.jp/contests/abc479/tasks/abc479_c
